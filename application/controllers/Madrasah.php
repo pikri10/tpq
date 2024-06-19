@@ -72,9 +72,19 @@ class Madrasah extends CI_Controller
         $this->load->model('Detail_model');
         $data['siswa'] = $this->Detail_model->get_siswa_madrasah($id);
 
-        $this->form_validation->set_rules('nis', 'Nis', 'required');
+        $this->form_validation->set_rules('nis', 'Nis', 'required|trim');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis_kelamin', 'required|trim');
+        $this->form_validation->set_rules('tempat_lahir', 'Tempat_lahir', 'required|trim');
+        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal_lahir', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim');
+        $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim');
+        $this->form_validation->set_rules('nomor_ortu', 'Nomor_ortu', 'required|trim');
+        $this->form_validation->set_rules('tahun_masuk', 'Tomor_ortu', 'required|trim');
 
-        if ($this->form_validation->run() == FALSE) {
+        if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
@@ -83,7 +93,7 @@ class Madrasah extends CI_Controller
         }else{
             $this->Detail_model->edit_siswa_madrasah();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data sudah di-update!</div>');
-            redirect('madrasah/edit_siswa');
+            redirect('siswa/siswa_madrasah');
         }
     }
 }
