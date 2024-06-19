@@ -8,92 +8,81 @@
 
                     
                 </div>
-                <!-- /.container-fluid -->
-                <nav class="nav nav-pills nav-fill">
-  <a class="nav-link " href="<?= base_url('siswa/daftar_tpq') ?>">TPQ</a>
-  <a class="nav-link" href="<?= base_url('siswa/daftar_madrasah') ?>">Madrasah</a>
-  <a class="nav-link" href="<?= base_url('siswa/daftar_tahfidz') ?>">Program Tahfidz</a>
-</nav>
+                
 <div class="row col-lg-10">
                         <div class="col-lg-8">
-                        <?= $this->session->flashdata('message'); ?>
-                        <form action="<?= base_url('siswa/daftar_tahfidz'); ?>" method="post" >
                             <div class="form-group row">
                                 <label for="nis" class="col-sm-2 col-form-label">NIS</label>
                                 <div class="col-sm-10">
-                                <input type="number" class="form-control" id="nis" name="nis">
+                                <input type="number" class="form-control" id="nis" name="nis" value="<?= $siswa['nis']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nama" name="nama">
+                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $siswa['nama']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nik" class="col-sm-2 col-form-label">NIK</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nik" name="nik">
+                                <input type="text" class="form-control" id="nik" name="nik" value="<?= $siswa['nik']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="jenis_kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-10">
-                                <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
-                                  <option value="Laki-laki">Laki-laki</option>
-                                  <option value="Perempuan">Perempuan</option>
-                                </select>
+                                <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="<?= $siswa['jenis_kelamin']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir">
+                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?= $siswa['tempat_lahir']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="tanggal_lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
                                 <div class="col-sm-10">
-                                <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
+                                <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?= $siswa['tanggal_lahir']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="alamat" name="alamat">
+                                <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $siswa['alamat']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="ibu" class="col-sm-2 col-form-label">Nama Ibu</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ibu" name="ibu">
+                                <input type="text" class="form-control" id="ibu" name="ibu" value="<?= $siswa['ibu']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="ayah" class="col-sm-2 col-form-label">Nama Ayah</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ayah" name="ayah">
+                                <input type="text" class="form-control" id="ayah" name="ayah" value="<?= $siswa['ayah']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nomor_ortu" class="col-sm-2 col-form-label">Nomor HP Orang Tua</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomor_ortu" name="nomor_ortu">
+                                <input type="text" class="form-control" id="nomor_ortu" name="nomor_ortu" value="<?= $siswa['nomor_ortu']; ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="tahun_masuk" class="col-sm-2 col-form-label">Tahun Masuk</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="tahun_masuk" name="tahun_masuk">
+                                <input type="text" class="form-control" id="tahun_masuk" name="tahun_masuk" value="<?= $siswa['tahun_masuk']; ?>" disabled>
                                 </div>
                             </div>
                     <div class="form-group row justify-content-end mr-6">
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Daftarkan</button>
+                        <a href="<?= base_url('tahfidz'); ?>" class="btn btn-primary">Kembali</a>
                         </div>
                     </div>
                 </div>
-                </form>
 
                     
                 </div>

@@ -9,7 +9,7 @@ class Dashboard extends CI_Controller
     }
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Yayasan Sabilul Huda Pesurungan Kidul';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->load->view('templates/header', $data);

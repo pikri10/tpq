@@ -10,18 +10,18 @@
                 </div>
                 <!-- /.container-fluid -->
                 <nav class="nav nav-pills nav-fill">
-  <a class="nav-link " href="<?= base_url('siswa/daftar_tpq') ?>">TPQ</a>
-  <a class="nav-link" href="<?= base_url('siswa/daftar_madrasah') ?>">Madrasah</a>
-  <a class="nav-link" href="<?= base_url('siswa/daftar_tahfidz') ?>">Program Tahfidz</a>
+  <a class="nav-link " href="<?= base_url('admin/daftar_tpq') ?>">TPQ</a>
+  <a class="nav-link" href="<?= base_url('admin/daftar_madrasah') ?>">Madrasah</a>
+  <a class="nav-link" href="<?= base_url('admin/daftar_tahfidz') ?>">Program Tahfidz</a>
 </nav>
 <div class="row col-lg-10">
                         <div class="col-lg-8">
                         <?= $this->session->flashdata('message'); ?>
-                        <form action="<?= base_url('siswa/daftar_tahfidz'); ?>" method="post" >
+                        <form action="<?= base_url('admin/daftar_tahfidz'); ?>" method="post" >
                             <div class="form-group row">
-                                <label for="nis" class="col-sm-2 col-form-label">NIS</label>
+                                <label for="kode" class="col-sm-2 col-form-label">Kode Guru</label>
                                 <div class="col-sm-10">
-                                <input type="number" class="form-control" id="nis" name="nis">
+                                <input type="text" class="form-control" id="kode" name="kode">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -64,29 +64,18 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="ibu" class="col-sm-2 col-form-label">Nama Ibu</label>
+                                <label for="nomor_hp" class="col-sm-2 col-form-label">Nomor HP</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ibu" name="ibu">
+                                <input type="text" class="form-control" id="nomor_hp" name="nomor_hp">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="ayah" class="col-sm-2 col-form-label">Nama Ayah</label>
+                                <label for="nipy" class="col-sm-2 col-form-label">NIPY</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ayah" name="ayah">
+                                <input type="text" class="form-control" id="nipy" name="nipy">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="nomor_ortu" class="col-sm-2 col-form-label">Nomor HP Orang Tua</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomor_ortu" name="nomor_ortu">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="tahun_masuk" class="col-sm-2 col-form-label">Tahun Masuk</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="tahun_masuk" name="tahun_masuk">
-                                </div>
-                            </div>
+                            
                     <div class="form-group row justify-content-end mr-6">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Daftarkan</button>

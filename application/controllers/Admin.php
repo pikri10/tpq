@@ -10,7 +10,7 @@ class Admin extends CI_Controller
     }
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Dashboard Admin';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->load->view('templates/header', $data);
@@ -108,4 +108,135 @@ class Admin extends CI_Controller
             $this->load->view('templates/footer');
     }
 
+    public function tambah_guru()
+    {
+        $data['title'] = 'Tambah Guru';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/tambahguru', $data);
+        $this->load->view('templates/footer');
+    }
+    public function daftar_tpq()
+    {
+        $data['title'] = 'Pendaftaran Guru TPQ';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('kode', 'Kode', 'required|trim');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis_kelamin', 'required|trim');
+        $this->form_validation->set_rules('tempat_lahir', 'Tempat_lahir', 'required|trim');
+        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal_lahir', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('nipy', 'Nipy', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+			$this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/guru_tpq', $data);
+            $this->load->view('templates/footer');
+		}
+		else{
+			$data = [
+				'kode_guru' => $this->input->post('kode', true),
+				'nama' => htmlspecialchars($this->input->post('nama', true)),
+				'nik' => htmlspecialchars($this->input->post('nik', true)),
+				'jenis_kelamin' => htmlspecialchars($this->input->post('jenis_kelamin', true)),
+				'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir', true)),
+				'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
+				'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+				'nipy' => htmlspecialchars($this->input->post('nipy', true)),
+				'nomor_hp' => htmlspecialchars($this->input->post('nomor_hp', true)),
+				'foto' => 'default.jpg'
+			];
+
+			$this->db->insert('guru_tpq', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mendaftar!</div>');
+			redirect('admin/daftar_tpq');
+		}
+    }
+    public function daftar_madrasah()
+    {
+        $data['title'] = 'Pendaftaran Guru Madrasah';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('kode', 'Kode', 'required|trim');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis_kelamin', 'required|trim');
+        $this->form_validation->set_rules('tempat_lahir', 'Tempat_lahir', 'required|trim');
+        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal_lahir', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('nipy', 'Nipy', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+			$this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/guru_madrasah', $data);
+            $this->load->view('templates/footer');
+		}
+		else{
+			$data = [
+				'kode_guru' => $this->input->post('kode', true),
+				'nama' => htmlspecialchars($this->input->post('nama', true)),
+				'nik' => htmlspecialchars($this->input->post('nik', true)),
+				'jenis_kelamin' => htmlspecialchars($this->input->post('jenis_kelamin', true)),
+				'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir', true)),
+				'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
+				'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+				'nipy' => htmlspecialchars($this->input->post('nipy', true)),
+				'nomor_hp' => htmlspecialchars($this->input->post('nomor_hp', true)),
+				'foto' => 'default.jpg'
+			];
+
+			$this->db->insert('guru_madrasah', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mendaftar!</div>');
+			redirect('admin/daftar_madrasah');
+		}
+    }
+    public function daftar_tahfidz()
+    {
+        $data['title'] = 'Pendaftaran Guru Tahfidz';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('kode', 'Kode', 'required|trim');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis_kelamin', 'required|trim');
+        $this->form_validation->set_rules('tempat_lahir', 'Tempat_lahir', 'required|trim');
+        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal_lahir', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('nipy', 'Nipy', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+			$this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/guru_tahfidz', $data);
+            $this->load->view('templates/footer');
+		}
+		else{
+			$data = [
+				'kode_guru' => $this->input->post('kode', true),
+				'nama' => htmlspecialchars($this->input->post('nama', true)),
+				'nik' => htmlspecialchars($this->input->post('nik', true)),
+				'jenis_kelamin' => htmlspecialchars($this->input->post('jenis_kelamin', true)),
+				'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir', true)),
+				'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
+				'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+				'nipy' => htmlspecialchars($this->input->post('nipy', true)),
+				'nomor_hp' => htmlspecialchars($this->input->post('nomor_hp', true)),
+				'foto' => 'default.jpg'
+			];
+
+			$this->db->insert('guru_tahfidz', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mendaftar!</div>');
+			redirect('admin/daftar_tahfidz');
+		}
+    }
 }

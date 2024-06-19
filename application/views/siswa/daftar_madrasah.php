@@ -16,7 +16,8 @@
 </nav>
 <div class="row col-lg-10">
                         <div class="col-lg-8">
-                        <form action="" method="post">
+                        <?= $this->session->flashdata('message'); ?>
+                        <form action="<?= base_url('siswa/daftar_madrasah'); ?>" method="post" >
                             <div class="form-group row">
                                 <label for="nis" class="col-sm-2 col-form-label">NIS</label>
                                 <div class="col-sm-10">

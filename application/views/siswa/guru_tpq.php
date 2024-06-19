@@ -8,7 +8,7 @@
 
                     
                     <div class="row">
-                      <div class="col-lg-6">
+                      <div class="col-lg">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -30,7 +30,7 @@
                                 <td><?= $guru['alamat']; ?></td>
                                 <td><?= $guru['nipy']; ?></td>
                                 <td>
-                                    <a href="" class="badge badge-primary">detail</a>
+                                    <a href="<?= base_url('tpq/detail_guru/') . $guru['id']; ?>" class="badge badge-primary">detail</a>
                                 </td>
                                 </tr>
                                 <?php $i++; ?>

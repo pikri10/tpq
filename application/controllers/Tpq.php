@@ -36,4 +36,32 @@ class Tpq extends CI_Controller
         $this->load->view('siswa/guru_tpq', $data);
         $this->load->view('templates/footer');
     }
+    public function detail_guru($id)
+    {
+        $data['title'] = 'Detail Guru TPQ';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->model('Detail_model');
+        $data['guru'] = $this->Detail_model->get_guru_tpq($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('siswa/detail_guru_tpq', $data);
+        $this->load->view('templates/footer');
+    }
+    public function detail_siswa($id)
+    {
+        $data['title'] = 'Detail Siswa TPQ';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->model('Detail_model');
+        $data['siswa'] = $this->Detail_model->get_siswa_tpq($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('siswa/detail_siswa_tpq', $data);
+        $this->load->view('templates/footer');
+    }
 }
