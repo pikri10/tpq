@@ -94,7 +94,7 @@
                             </div>
                     <div class="form-group row justify-content-end mr-6">
                         <div class="col-sm-10">
-                        <a href="<?= base_url('siswa/siswa_madrasah'); ?>" class="btn btn-danger">Kembali</a>
+                        <a href="<?= base_url('siswa/siswa_tpq'); ?>" class="btn btn-danger">Kembali</a>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </div>

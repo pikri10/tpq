@@ -76,7 +76,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim');
         $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim');
         $this->form_validation->set_rules('nomor_ortu', 'Nomor_ortu', 'required|trim');
-        $this->form_validation->set_rules('tahun_masuk', 'Tomor_ortu', 'required|trim');
+        $this->form_validation->set_rules('tahun_masuk', 'Tahun_masuk', 'required|trim');
 
         if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header', $data);
@@ -98,7 +98,15 @@ class Siswa extends CI_Controller
 				'ayah' => htmlspecialchars($this->input->post('ayah', true)),
 				'nomor_ortu' => htmlspecialchars($this->input->post('nomor_ortu', true)),
 				'foto' => 'default.jpg',
-                'tahun_masuk' => $this->input->post('tahun_masuk', true)
+                'tahun_masuk' => $this->input->post('tahun_masuk', true),
+                'uang_gedung' => 'BELUM LUNAS',
+                'tagihan1' => 'BELUM LUNAS',
+                'tagihan2' => 'BELUM LUNAS',
+                'tagihan3' => 'BELUM LUNAS',
+                'tagihan4' => 'BELUM LUNAS',
+                'tagihan5' => 'BELUM LUNAS',
+                'tagihan6' => 'BELUM LUNAS',
+                'tabungan' => 0
 			];
 
 			$this->db->insert('siswa_tpq', $data);
@@ -121,7 +129,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim');
         $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim');
         $this->form_validation->set_rules('nomor_ortu', 'Nomor_ortu', 'required|trim');
-        $this->form_validation->set_rules('tahun_masuk', 'Tomor_ortu', 'required|trim');
+        $this->form_validation->set_rules('tahun_masuk', 'Tahun_masuk', 'required|trim');
 
         if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header', $data);
@@ -143,7 +151,15 @@ class Siswa extends CI_Controller
 				'ayah' => htmlspecialchars($this->input->post('ayah', true)),
 				'nomor_ortu' => htmlspecialchars($this->input->post('nomor_ortu', true)),
 				'foto' => 'default.jpg',
-                'tahun_masuk' => $this->input->post('tahun_masuk', true)
+                'tahun_masuk' => $this->input->post('tahun_masuk', true),
+                'uang_gedung' => 'BELUM LUNAS',
+                'tagihan1' => 'BELUM LUNAS',
+                'tagihan2' => 'BELUM LUNAS',
+                'tagihan3' => 'BELUM LUNAS',
+                'tagihan4' => 'BELUM LUNAS',
+                'tagihan5' => 'BELUM LUNAS',
+                'tagihan6' => 'BELUM LUNAS',
+                'tabungan' => 0
 			];
 
 			$this->db->insert('siswa_madrasah', $data);
@@ -166,7 +182,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim');
         $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim');
         $this->form_validation->set_rules('nomor_ortu', 'Nomor_ortu', 'required|trim');
-        $this->form_validation->set_rules('tahun_masuk', 'Tomor_ortu', 'required|trim');
+        $this->form_validation->set_rules('tahun_masuk', 'Tahun_masuk', 'required|trim');
 
         if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header', $data);
@@ -188,7 +204,15 @@ class Siswa extends CI_Controller
 				'ayah' => htmlspecialchars($this->input->post('ayah', true)),
 				'nomor_ortu' => htmlspecialchars($this->input->post('nomor_ortu', true)),
 				'foto' => 'default.jpg',
-                'tahun_masuk' => $this->input->post('tahun_masuk', true)
+                'tahun_masuk' => $this->input->post('tahun_masuk', true),
+                'uang_gedung' => 'BELUM LUNAS',
+                'tagihan1' => 'BELUM LUNAS',
+                'tagihan2' => 'BELUM LUNAS',
+                'tagihan3' => 'BELUM LUNAS',
+                'tagihan4' => 'BELUM LUNAS',
+                'tagihan5' => 'BELUM LUNAS',
+                'tagihan6' => 'BELUM LUNAS',
+                'tabungan' => 0
 			];
 
 			$this->db->insert('siswa_tahfidz', $data);

@@ -82,7 +82,15 @@ class Madrasah extends CI_Controller
         $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim');
         $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim');
         $this->form_validation->set_rules('nomor_ortu', 'Nomor_ortu', 'required|trim');
-        $this->form_validation->set_rules('tahun_masuk', 'Tomor_ortu', 'required|trim');
+        $this->form_validation->set_rules('tahun_masuk', 'Tahun_masuk', 'required|trim');
+        $this->form_validation->set_rules('uang_gedung', 'Uang_gedung', 'required|trim');
+        $this->form_validation->set_rules('tagihan1', 'Tagihan1', 'required|trim');
+        $this->form_validation->set_rules('tagihan2', 'Tagihan2', 'required|trim');
+        $this->form_validation->set_rules('tagihan3', 'Tagihan3', 'required|trim');
+        $this->form_validation->set_rules('tagihan4', 'Tagihan4', 'required|trim');
+        $this->form_validation->set_rules('tagihan5', 'Tagihan5', 'required|trim');
+        $this->form_validation->set_rules('tagihan6', 'Tagihan6', 'required|trim');
+        $this->form_validation->set_rules('tabungan', 'Tabungan', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -92,6 +100,34 @@ class Madrasah extends CI_Controller
             $this->load->view('templates/footer');
         }else{
             $this->Detail_model->edit_siswa_madrasah();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data sudah di-update!</div>');
+            redirect('siswa/siswa_madrasah');
+        }
+    }
+    public function tagihan_siswa($id)
+    {
+        $data['title'] = 'Tagihan Siswa Madrasah';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->load->model('Detail_model');
+        $data['siswa'] = $this->Detail_model->get_siswa_madrasah($id);
+
+        $this->form_validation->set_rules('uang_gedung', 'Uang_gedung', 'required|trim');
+        $this->form_validation->set_rules('tagihan1', 'Tagihan1', 'required|trim');
+        $this->form_validation->set_rules('tagihan2', 'Tagihan2', 'required|trim');
+        $this->form_validation->set_rules('tagihan3', 'Tagihan3', 'required|trim');
+        $this->form_validation->set_rules('tagihan4', 'Tagihan4', 'required|trim');
+        $this->form_validation->set_rules('tagihan5', 'Tagihan5', 'required|trim');
+        $this->form_validation->set_rules('tagihan6', 'Tagihan6', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/tagihan_siswa_madrasah', $data);
+            $this->load->view('templates/footer');
+        }else{
+            $this->Detail_model->tagihan_siswa_madrasah();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data sudah di-update!</div>');
             redirect('siswa/siswa_madrasah');
         }

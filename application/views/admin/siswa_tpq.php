@@ -30,7 +30,9 @@
                                 <td><?= $siswa['alamat']; ?></td>
                                 <td><?= $siswa['tahun_masuk']; ?></td>
                                 <td>
-                                    <a href="<?= base_url('tpq/detail_siswa/') . $siswa['id']; ?>" class="badge badge-primary">detail</a>
+                                <a href="<?= base_url('tpq/edit_siswa/') . $siswa['id']; ?>" class="badge badge-primary">edit</a>
+                                    <a href="<?= base_url('tpq/tagihan_siswa/') . $siswa['id']; ?>" class="badge badge-warning">tagihan</a>
+                                    <a href="<?= base_url('tpq/tabungan_siswa/') . $siswa['id']; ?>" class="badge badge-danger">tabungan</a>
                                 </td>
                                 </tr>
                                 <?php $i++; ?>

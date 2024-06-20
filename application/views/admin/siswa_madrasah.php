@@ -9,6 +9,7 @@
                     
                     <div class="row">
                       <div class="col-lg">
+                      <?= $this->session->flashdata('message'); ?>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -31,6 +32,8 @@
                                 <td><?= $siswa['tahun_masuk']; ?></td>
                                 <td>
                                     <a href="<?= base_url('madrasah/edit_siswa/') . $siswa['id']; ?>" class="badge badge-primary">edit</a>
+                                    <a href="<?= base_url('madrasah/tagihan_siswa/') . $siswa['id']; ?>" class="badge badge-warning">tagihan</a>
+                                    <a href="<?= base_url('madrasah/tabungan_siswa/') . $siswa['id']; ?>" class="badge badge-danger">tabungan</a>
                                 </td>
                                 </tr>
                                 <?php $i++; ?>

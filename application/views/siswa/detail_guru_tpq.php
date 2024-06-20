@@ -14,55 +14,55 @@
                             <div class="form-group row">
                                 <label for="kode" class="col-sm-2 col-form-label">Kode Guru</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="kode" name="kode" value="<?= $guru['kode_guru']; ?>" disabled>
+                                <input type="text" class="form-control" id="kode" name="kode" value="<?= $guru['kode_guru']; ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $guru['nama']; ?>" disabled>
+                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $guru['nama']; ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nik" class="col-sm-2 col-form-label">NIK</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nik" name="nik" value="<?= $guru['nik']; ?>" disabled>
+                                <input type="text" class="form-control" id="nik" name="nik" value="<?= $guru['nik']; ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="jenis_kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" disabled value="<?= $guru['jenis_kelamin']; ?>">
+                                <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" readonly value="<?= $guru['jenis_kelamin']; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" disabled value="<?= $guru['tempat_lahir']; ?>">
+                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" readonly value="<?= $guru['tempat_lahir']; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="tanggal_lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" disabled value="<?= $guru['tanggal_lahir']; ?>">
+                                <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" readonly value="<?= $guru['tanggal_lahir']; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $guru['alamat']; ?>" disabled>
+                                <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $guru['alamat']; ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nomor_hp" class="col-sm-2 col-form-label">Nomor HP</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" value="<?= $guru['nomor_hp']; ?>" disabled>
+                                <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" value="<?= $guru['nomor_hp']; ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="nipy" class="col-sm-2 col-form-label">NIPY</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nipy" name="nipy" value="<?= $guru['nipy']; ?>" disabled>
+                                <input type="text" class="form-control" id="nipy" name="nipy" value="<?= $guru['nipy']; ?>" readonly>
                                 </div>
                             </div>
                             
